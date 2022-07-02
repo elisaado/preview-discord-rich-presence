@@ -8,8 +8,6 @@ client.login({ clientId: "992893976417947799" }).catch(console.error);
 const exec = util.promisify(require("child_process").exec);
 
 async function start() {
-  const proc = (await exec("")).stdout;
-
   let { stdout } = await exec(
     "lsof -p $(pgrep -f /System/Applications/Preview.app/Contents/MacOS/Preview) | grep pdf -i"
   );
