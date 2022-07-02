@@ -1,5 +1,7 @@
 # preview-discord-rich-presence
 
+The program currently only works with PDF
+
 ## Installation
 
 - clone this repository
