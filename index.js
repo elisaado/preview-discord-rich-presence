@@ -9,10 +9,10 @@ const exec = util.promisify(require("child_process").exec);
 
 async function start() {
   let { stdout } = await exec(
-    "lsof -p $(pgrep -f /System/Applications/Preview.app/Contents/MacOS/Preview) | grep pdf -i"
+    "lsof -p $(pgrep -f /System/Applications/Preview.app/Contents/MacOS/Preview) -F | grep pdf"
   );
 
-  const file = stdout.split("\n")[0].split(" ").slice(42).join(" ");
+  const file = stdout.split("\n")[0];
 
   const name = path.basename(file);
   let activity = {
